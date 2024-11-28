@@ -34,11 +34,14 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Frontend URL
+    allow_origins=["*"],  # Allow all origins
     allow_credentials=True,
     allow_methods=["*"],  # Allow all HTTP methods
     allow_headers=["*"],  # Allow all headers
 )
+
+# Your application code continues here...
+
 
 @app.on_event("startup")
 async def load_data():
@@ -208,6 +211,6 @@ async def recommend_travel(request: TravelRequest):
         raise HTTPException(status_code=500, detail=str(e))
 
 # Run the FastAPI app
-if _name_ == "_main_":
+if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="127.0.0.1", port=8000)
