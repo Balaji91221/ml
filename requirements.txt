@@ -1,0 +1,8 @@
+fastapi
+google-generativeai
+uvicorn
+
+nltk
+numpy
+pandas
+pydantic
