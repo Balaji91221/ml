@@ -1,8 +1,10 @@
 fastapi
 google-generativeai
 uvicorn
-
 nltk
 numpy
 pandas
 pydantic
+scikit-learn
+grpcio --prefer-binary
+cython
